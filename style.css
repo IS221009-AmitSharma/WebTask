@@ -1,0 +1,60 @@
+:root {
+  --bg: #0f1418;
+  --surface: #182027;
+  --text: #e8eef2;
+  --primary: #21808d;
+  --primary-2: #1b6d78;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; color: var(--text); background: var(--bg); }
+.container { max-width: 420px; margin: 0 auto; padding: 16px; }
+
+.toolbar { background: var(--surface); border: 1px solid #2a3842; padding: 12px; border-radius: 10px; margin-bottom: 16px; }
+.text-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 10px; }
+.form-label { font-size: 12px; }
+.form-control { padding: 6px 8px; border: 1px solid #2a3842; background: #0f151a; color: var(--text); border-radius: 6px; }
+.btn { padding: 8px 12px; border: 0; border-radius: 8px; cursor: pointer; }
+.btn--primary { background: var(--primary); color: #fff; }
+.btn--primary:hover { background: var(--primary-2); }
+
+.swiper { width: 100%; height: 600px; border-radius: 12px; overflow: hidden; background: #0b1115; }
+.swiper-wrapper, .swiper-slide { width: 100%; height: 100%; }
+.swiper-slide { display: flex; justify-content: center; align-items: center; position: relative; }
+
+.slide-image { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+
+.text-layer { position: absolute; inset: 0; pointer-events: none; }
+.text-box {
+  position: absolute;
+  min-width: 60px; min-height: 28px;
+  padding: 6px 10px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  border-radius: 6px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+  cursor: move;
+  pointer-events: all;
+  outline: none;
+  border: 2px solid transparent;
+  white-space: pre-wrap; word-break: break-word; line-height: 1.35;
+  z-index: 10;
+}
+.text-box.selected { border-color: var(--primary); z-index: 20; background: rgba(0,0,0,0.6); box-shadow: 0 0 10px rgba(33,128,141,0.5); }
+.text-box.dragging { cursor: grabbing; transform: scale(1.03); }
+
+.swiper-button-prev, .swiper-button-next {
+  color: var(--primary);
+  background: rgba(255,255,255,0.95);
+  width: 40px; height: 40px; border-radius: 50%;
+}
+.swiper-button-prev::after, .swiper-button-next::after { font-size: 16px; font-weight: 700; }
+.swiper-pagination-bullet { background: rgba(255,255,255,0.6); opacity: 1; width: 12px; height: 12px; }
+.swiper-pagination-bullet-active { background: var(--primary); }
+
+@media (max-width: 480px) {
+  .swiper { height: 520px; }
+  .text-box { font-size: 16px; padding: 4px 8px; }
+}
