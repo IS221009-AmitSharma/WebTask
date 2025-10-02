@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portrait Swiper + Draggable Text</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="toolbar">
+      <button id="addTextBtn" class="btn btn--primary">Add Text</button>
+      <div class="text-controls">
+        <label class="form-label" for="fontFamily">Font</label>
+        <select id="fontFamily" class="form-control">
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="Georgia, serif">Georgia</option>
+          <option value="Times New Roman, serif">Times New Roman</option>
+          <option value="Courier New, monospace">Courier New</option>
+          <option value="Helvetica, sans-serif">Helvetica</option>
+          <option value="Verdana, sans-serif">Verdana</option>
+        </select>
+        <label class="form-label" for="fontSize">Size</label>
+        <input id="fontSize" class="form-control" type="range" min="12" max="48" value="18"/>
+        <span id="fontSizeDisplay">18px</span>
+        <label class="form-label" for="fontColor">Color</label>
+        <input id="fontColor" class="form-control" type="color" value="#ffffff"/>
+      </div>
+    </div>
+
+    <div class="swiper" id="mainSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" data-slide="0">
+          <img class="slide-image" src="1.jpeg" alt="Slide 1"/>
+          <div class="text-layer" data-slide="0"></div>
+        </div>
+        <div class="swiper-slide" data-slide="1">
+          <img class="slide-image" src="2.jpg" alt="Slide 2"/>
+          <div class="text-layer" data-slide="1"></div>
+        </div>
+        <div class="swiper-slide" data-slide="2">
+          <img class="slide-image" src="3.jpg" alt="Slide 3"/>
+          <div class="text-layer" data-slide="2"></div>
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
